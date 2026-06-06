@@ -1,4 +1,4 @@
-const BASE = process.env.REACT_APP_API_URL || "http://localhost:5000";
+https://snap-video-studio-production.up.railway.app
 
 export async function generateVideo({ prompt, aspect_ratio, resolution }) {
   const res = await fetch(`${BASE}/api/generate`, {
