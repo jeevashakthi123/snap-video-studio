@@ -1,0 +1,22 @@
+# Python
+backend/.venv/
+backend/__pycache__/
+backend/*.pyc
+backend/videos/*.mp4
+backend/videos/history.json
+
+# Node
+frontend/node_modules/
+frontend/build/
+
+# Env / secrets
+.env
+.env.local
+backend/config.local.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Models (large)
+backend/models/

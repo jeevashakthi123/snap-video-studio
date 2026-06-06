@@ -1,0 +1,64 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  --bg: #0a0a0f;
+  --surface: #12121a;
+  --card: #1a1a26;
+  --border: #252535;
+  --accent: #7c5cfc;
+  --accent-bright: #9d7ffe;
+  --cyan: #00e5ff;
+  --amber: #ffb800;
+  --text: #e8e8f0;
+  --muted: #8888a8;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* Shimmer skeleton */
+.shimmer {
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.03) 0%,
+    rgba(255,255,255,0.08) 50%,
+    rgba(255,255,255,0.03) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+/* Glow ring on focus */
+.glow-focus:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent), 0 0 20px rgba(124,92,252,0.3);
+}
+
+/* Noise overlay */
+.noise::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.35;
+}
+
+/* Video aspect ratio boxes */
+.ratio-16-9  { aspect-ratio: 16/9; }
+.ratio-9-16  { aspect-ratio: 9/16; }
+.ratio-1-1   { aspect-ratio: 1/1; }

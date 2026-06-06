@@ -1,0 +1,7 @@
+{
+  "provider": "mock",
+  "mock_delay_seconds": 3,
+  "huggingface_token": "",
+  "max_saved_videos": 5,
+  "watermark_text": "Created with Snap Video Studio"
+}
